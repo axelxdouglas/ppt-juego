@@ -1,0 +1,19 @@
+{
+  "name": "ppt-juego",
+  "version": "1.0.0",
+  "description": "juego de piedra, papel o tijera",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelxdouglas/ppt-juego.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axelxdouglas/ppt-juego/issues"
+  },
+  "homepage": "https://github.com/axelxdouglas/ppt-juego#readme"
+}
