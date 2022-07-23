@@ -1,48 +1,39 @@
-// 0. Iniciar el juego
-alert('Inicia el juego!')
-alert('Elige tu ataque')
-// 1. Elegir ataque de los jugadores
-let player = prompt('Elige 0 para piedra, 1 para papel y 2 para tijera')
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
 
-if(player == 0){
-    alert('Elegiste piedra')
-} else if (player == 1){
-    alert('Elegiste papel')
-} else if (player == 2){
-    alert('Elegiste tijera')
-}
+  function eleccion(jugada) {
+    let resultado = ""
+    if(jugada == 1) {
+      resultado = "Piedra 🪨"
+    } else if (jugada == 2) {
+      resultado = "Papel 📃"
+    } else if (jugada == 3) {
+      resultado = "Tijera ✂️"
+    } else {
+      resultado = "MAL ELEGIDO"
+    }
+    return resultado
+  }
 
-// 2. Elegir el ataque ALEATORIO del enemigo
-/*Cada vez que llamemos a la función Math.random() devuelve un nro aleatorio entre 0-1 pero nosotros necesitamos 0,1,2 nada más para eso multiplicamos por 2 para que sea entre 0 y 2 y le redondeamos el nro con Math.round y metemos entre los () lo que nos saque el math.round
+  // 1 es piedra, 2 es papel, 3 es tijera
+  let jugador = 0
+  let pc = aleatorio(1,3)
+  jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijera")
+  // alert("Elegiste " + jugador)
 
-Entonces hacemos que guarde este math.round del math.random * 2 para que de un 0, 1 o 2 */
-let enemy = Math.round(Math.random() * 2)
-
-/*Lo mismo, decirle a los jdrs cual fue el ataque de los enemigos*/
-if(enemy == 0){
-    alert('El enemigo elegió piedra')
-} else if (enemy == 1){
-    alert('El enemigo elegió  papel')
-} else if (enemy == 2){
-    alert('El enemigo elegió  tijera')
-}
-
-// 3. Mostrar el resultado
-
-if (player == enemy){
-    alert('Empate :|')
-} else if (player == 0 && enemy == 2){
-    alert('Ganaste :)')
-} else if (player == 1 && enemy == 0){
-    alert('Ganaste :)')
-}else if (player == 2 && enemy == 1){
-    alert('Ganaste :)')
-} else {
-    alert('Perdiste :(')
-}
-
-// 4. Next steps / TODOs
-// - Arreglar bugs
-// - Arreglar aleatoriedad
-// - Interactividad con una página web (manipulación del DOM)
-// - Multijugador (backend - servidor central)
+  alert("Tú eliges " + eleccion(jugador))
+  alert("PC elige " + eleccion(pc))
+  
+  // COMBATE
+  if (pc == jugador) {
+    alert("EMPATE")
+  } else if (jugador == 1 && pc == 3) {
+    alert("GANASTE")
+  } else if (jugador == 2 && pc == 1) {
+    alert("GANASTE")
+  } else if (jugador == 3 && pc == 2) {
+    alert("GANASTE")
+  } else {
+    alert("PERDISTE")
+  }
